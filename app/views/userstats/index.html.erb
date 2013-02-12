@@ -1,0 +1,196 @@
+<div class="container" id="top">
+
+	<!-- WELCOME PHRASE WITH TWO BUTTONS -->
+	<div class="row-fluid pagination-centered">
+  	<div class="span12 counter-box">
+  		<h1> Las redes sociales revolucionarán la manera en que funciona la política.</h1>
+  		<a href="#aboutElement"><button class="btn btn-info btn-large">Info</button></a>
+  		<%= link_to "Unete", new_user_registration_path, class: "btn btn-primary btn-large " %>
+			<h2>Número de afiliados: <%= @user %></h2>
+		</div>
+	</div>
+
+	<!-- 	THE MAP -->
+	<div class="state-map">
+  	<div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </div>
+  
+
+  <div class="row-fluid">
+  	<div class="span12 pagination-centered counter-box">
+  		<h3>Quedan <%= number_of_days = (Date.parse('2013-12-31') - Date.today).to_i %> días para reunir <%= number_with_delimiter(220000 - @user) %> afiliados</h3>
+  		<a href="https://twitter.com/d20mx" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large">Seguir a @d20mx</a>
+		</div>
+	</div>
+  
+
+	<!-- THE ABOUT PAGE -->
+	<div class="top2 counter-box" id="aboutElement">
+
+		
+
+		<!-- THE THREE ICONS -->
+	  <div class="row-fluid pagination-centered">
+	    <div class="span4">
+	      <%= image_tag("vote_square_small.png", :alt => "test") %>
+	    </div>
+	    <div class="span4">
+	      <%= image_tag("connect.jpg", :alt => "test") %>
+	    </div>
+	    <div class="span4">
+	      <%= image_tag("money.png", :alt => "test") %>
+	    </div>
+	  </div>
+		</br>
+		</br>
+
+	<!-- THE THREE PARAGRAPHS -->
+	  <div class="row-fluid pagination-centered">
+	    <div class="span4">
+	      <h2>Votación directa</h2>
+	      <p>¿Te imaginas un México sin diputados y que seas TÚ el que tome las decisiones? La tecnología actual permite que los ciudadanos ya no tengamos que nombrar “representantes” y podamos votar directamente y sin intermediarios cada nueva modificación a las leyes que rigen nuestras vidas.</p>
+	      <p><a class="btn btn-primary" data-toggle="modal" href="#myModal" >Ver detalles &raquo;</a></p>
+	    </div>
+	    <div class="span4">
+	      <h2>Iniciativas de ley</h2>
+	      <p>Dice el dicho popular que dos cabezas piensan mejor que una. ¿Te imaginas lo que se podría lograr con millones de cabezas pensando en cómo resolver los problemas del país? Nadie tiene el conocimiento necesario para solucionar todos los problemas del país, pero si conjuntamos lo poco o mucho que todos saben, podremos dar solución a cualquier cuestión que se presente. </p>
+	      <p><a class="btn btn-primary" data-toggle="modal" href="#myModal1" >Ver detalles &raquo;</a></p>
+	    </div>
+	    <div class="span4">
+	      <h2>Recursos</h2>
+	      <p>Los recursos otorgados por el IFE a los partidos están pensados para mantener costosas estructuras burocráticas partidistas que se han convertido en nidos de corrupción. ¿Te imaginas si tú pudieras decidir qué hacer con esos miles de millones de pesos y vigilar que se apliquen correctamente?</p>
+	      <p><a class="btn btn-primary" data-toggle="modal" href="#myModal2" >Ver detalles &raquo;</a></p>
+	    </div>
+	  </div>
+
+	  <!-- THE POP UP WIDNOWS -->
+	  <!-- WINDOW 1 -->
+	  <div class="modal hide fade" id="myModal">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal">x</button>
+	      <h3>Votación directa</h3>
+	    </div>
+	    <div class="modal-body">
+	    	<p>Internet es una poderosa herramienta de comunicación que ha transformado radicalmente diversas facetas de la sociedad y que cada vez tiene mayor incidencia en la política. Es hora de que aprovechemos su potencial para organizarnos y dar el siguiente paso lógico: que cada ciudadano se pueda representar a sí mismo a través de Internet prescindiendo de “representantes” que lo único que representan son los intereses de su partido y de las cúpulas detrás de ellos, pero que jamás escuchan las peticiones ni las necesidades de los ciudadanos a los que dicen representar.
+			Esto se puede lograr por la vía institucional aprovechando el marco legal que actualmente existe, pero para lograrlo es fundamental que te sumes a este esfuerzo. La propuesta es construir entre todos una plataforma web, bautizada como Democracia 2.0, que nos permita a los ciudadanos:
+
+			Discutir los problemas que afectan a la sociedad y nuestra vida diaria.
+			Elaborar colaborativamente diferentes iniciativas de ley para resolver estos problemas.
+			Votar por las mejores iniciativas que se realicen.
+			Llevar las iniciativas elaboradas y aprobadas por todos al Congreso de la Unión, para que los diputados las discutan y en su caso las aprueben o las rechacen.
+
+			Democracia 2.0 busca obtener registro como partido político nacional para tener votos en el Congreso y poder aprobar las reformas e iniciativas que los ciudadanos realicen y apoyen a través de la plataforma web. Mientras más votos tenga Democracia 2.0 en el Congreso, más fácil será que las iniciativas que los ciudadanos ya hayan aprobado en la plataforma web se conviertan en leyes.
+
+			Hasta dónde podemos llegar lo defines tú. Mientras más ciudadanos se sumen a este proyecto, podremos lograr un cambio más profundo y más rápido en México. Con tu voto en la plataforma web decides qué iniciativas debe apoyar Democracia 2.0, a qué ciudadanos se le otorgarán las candidaturas y a qué deben comprometerse, e incluso defines las forma en que debe operar Democracia 2.0.
+
+			Si se alcanza la suficiente participación ciudadana en Democracia 2.0, en el mediano plazo se podría incluso transformar la forma en que funciona el Congreso de la Unión para que ya no existan diputados ni senadores y que sean directamente todos y cada uno de los ciudadanos los que decidan desde la comodidad de sus casas qué rumbo debe tomar el país, todo gracias al potencial de Internet. ¿Y los que no tienen acceso a Internet? Pues es responsabilidad de los que participemos en Democracia 2.0 idear la forma para que lo tengan. </p>
+	    </div>
+	    <div class="modal-footer">
+	      <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	      <%= link_to "Unete", new_user_registration_path, class: "btn btn-primary" %>
+	    </div>
+	  </div>
+
+	  <!-- WINDOW 2 -->
+	  <div class="modal hide fade" id="myModal1">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal">x</button>
+	      <h3>Iniciativas de ley</h3>
+	    </div>
+	    <div class="modal-body">
+	      <p> Democracia 2.0 busca crear un espacio en Internet donde todos los ciudadanos podamos aportar nuestras ideas, por muy pequeñas o grandes que sean, para que otros las puedan mejorar y expandir. A lo mejor no sabes de leyes, pero tu idea podría gustarle a alguien que sí las conozca y le dé la formalidad necesaria para convertirla en una iniciativa de ley. O a lo mejor sabes de leyes, pero no conoces de sustentabilidad ecológica, por ejemplo, para darle bases teóricas a tu idea sobre cómo mejorar el medio ambiente, pero por ahí puede haber un experto que se interese en tu idea y la expanda con su conocimiento.
+	      Es imposible que todos seamos expertos en todos los temas. Pero si cada quien aporta su conocimiento en el ámbito en el que trabaja o se desenvuelve, las carencias individuales se esfuman y podemos convertirnos en una “inteligencia colectiva” experta en cualquier tema.
+
+	      Wikipedia es el ejemplo más conocido de este fenómeno al permitir a cualquier persona, indistintamente de sus credenciales académicas, editar cualquiera de sus contenidos. Democracia 2.0 pretende extrapolar esta dinámica al ámbito político para permitir a cualquier ciudadano participar en la elaboración de iniciativas y propuestas que sean de su interés. Cada uno de nosotros tiene conocimiento que ha adquirido ya sea en la escuela, en la universidad o en la vida diaria. Con Democracia 2.0 se podrá retomar ese conocimiento para aplicarlo en la solución de los problemas que aquejan a nuestro país.
+	      Todos tenemos algo que aportar, pero actualmente no tenemos quien nos escuche. Democracia 2.0 busca cambiar esta situación para convertirse en la plataforma donde todos podamos aportar nuestras ideas para la solución de los problemas que afectan a nuestra sociedad.</p>
+	    </div>
+	    <div class="modal-footer">
+	      <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	      <%= link_to "Unete", new_user_registration_path, class: "btn btn-primary" %>
+	    </div>
+	  </div>
+
+	  <!-- WINDOW 3 -->
+	  <div class="modal hide fade" id="myModal2">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal">x</button>
+	      <h3>Recursos</h3>
+	    </div>
+	    <div class="modal-body">
+	      <p>Democracia 2.0 pretende convertirse en una plataforma de participación ciudadana autogestionada por sus usuarios, quienes son los que tomarán las decisiones de cómo debe operar y qué debe hacerse con el dinero que le entregue el IFE. ¿Se debe devolver? ¿Se debe utilizar para financiar proyectos propuestos por los ciudadanos? ¿Se debe donar a instituciones de relevancia social? TÚ decides. Por otro lado, los gastos operativos de Democracia 2.0 serán los mínimos necesarios, consistentes principalmente en el pago de los servidores y el ancho de banda que se requiera para mantener en funcionamiento la plataforma web. Si surge la necesidad de emplear personas para el funcionamiento de Democracia 2.0, tú decidirás cuánto se les debe pagar y a quiénes se contratará.
+
+	      Independientemente de lo que decidas que se deba hacer con el dinero, Democracia 2.0 busca desarrollar un sistema de contabilidad y auditoria que revolucione la forma tradicional en la que se manejan los recursos dentro de una organización. En lugar de tener a un tesorero encargado del dinero y que puede estar tentado o presionado a hacer mal uso de los recursos, Democracia 2.0 plantea tener un sistema informático que sea el que maneje los recursos y que sea controlado de manera colectiva por todos los ciudadanos que quieran participar, mismos que mediante su voto decidirán a dónde deben destinarse los recursos. Además, se plantea que este sistema se conecte directamente al sistema informático del banco con el que se abran las cuentas de Democracia 2.0 para publicar en tiempo real sus saldos y transferencias, esto con el objeto de que cualquier persona pueda auditar en cualquier momento las finanzas del partido.
+
+	      Si tenemos miles de ojos escudriñando en todo momento las finanzas de Democracia 2.0, se podrá detectar oportunamente cualquier intento de desviar recursos, para impedirlo y en su caso proceder legalmente en contra de los implicados.
+
+	      Para poder desarrollar este sistema requerimos que se sumen programadores, contadores y personas que conozcan o hayan trabajado con sistemas de auditoria y finanzas. El sistema que desarrollemos será liberado como software libre para que su código pueda también ser auditado y que pueda ser utilizado por otras organizaciones que deseen operar de forma similar a Democracia 2.0. </p>
+	    </div>
+	    <div class="modal-footer">
+	      <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	      <%= link_to "Unete", new_user_registration_path, class: "btn btn-primary" %>
+	    </div>
+	  </div>
+	
+	</div>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawRegionsMap);
+
+     // No the best way to do it, should use a for loop. How do you pass variables from javascript to rails?
+
+      function drawRegionsMap() {
+      	var mystates = new Array();
+      	mystates[0] = ['Estado', 'Afiliados'];
+      	mystates[1] = ['Aguascalientes', <%= @state1[0] %>];
+				mystates[2] = ['Baja California', <%= @state1[1] %>];
+				mystates[3] = ['Baja California Sur', <%= @state1[2] %>];
+				mystates[4] = ['Campeche', <%= @state1[3] %>];
+				mystates[5] = ['Chiapas', <%= @state1[4] %>];
+				mystates[6] = ['Chihuahua', <%= @state1[5] %>];
+				mystates[7] = ['Coahuila', <%= @state1[6] %>];
+				mystates[8] = ['Colima', <%= @state1[7] %>];
+				mystates[9] = ['Distrito Federal', <%= @state1[8] %>];
+				mystates[10] = ['Durango', <%= @state1[9] %>];
+				mystates[11] = ['Guanajuato', <%= @state1[10] %>];
+				mystates[12] = ['Guerrero', <%= @state1[11] %>];
+				mystates[13] = ['Hidalgo', <%= @state1[12] %>];
+				mystates[14] = ['Jalisco', <%= @state1[13] %>];
+				mystates[15] = ['México', <%= @state1[14] %>];
+				mystates[16] = ['Michoacán', <%= @state1[15] %>];
+				mystates[17] = ['Morelos', <%= @state1[16] %>];
+				mystates[18] = ['Nayarit', <%= @state1[17] %>];
+				mystates[19] = ['Nuevo León', <%= @state1[18] %>];
+				mystates[20] = ['Oaxaca', <%= @state1[19] %>];
+				mystates[21] = ['Puebla', <%= @state1[20] %>];
+				mystates[22] = ['Querétaro', <%= @state1[21] %>];
+				mystates[23] = ['Quintana Roo', <%= @state1[22] %>];
+				mystates[24] = ['San Luis Potosí', <%= @state1[23] %>];
+				mystates[25] = ['Sinaloa', <%= @state1[24] %>];
+				mystates[26] = ['Sonora', <%= @state1[25] %>];
+				mystates[27] = ['Tabasco', <%= @state1[26] %>];
+				mystates[28] = ['Tamaulipas', <%= @state1[27] %>];
+				mystates[29] = ['Tlaxcala', <%= @state1[28] %>];
+				mystates[30] = ['Veracruz', <%= @state1[29] %>];
+				mystates[31] = ['Yucatán', <%= @state1[30] %>];
+				mystates[32] = ['Zacatecas', <%= @state1[31] %>];
+
+        var data = google.visualization.arrayToDataTable(
+        	mystates
+        );
+
+        var options = {
+        	region: 'MX',
+        	resolution: 'provinces',
+        	colorAxis: {colors: ['#EFE7DE', '#F4851F']}
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    };
+    </script>

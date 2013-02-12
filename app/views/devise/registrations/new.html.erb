@@ -1,0 +1,101 @@
+<div class="container" id="top">
+	<h2>Regístrate</h2>
+
+	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	<%= devise_error_messages! %>
+
+	<div class="row-fluid well">
+		<div class="row-fluid">
+			<div class="span5">
+				<h5>Datos de Registro</h5>
+	   	</div>
+	   	<div class="span7">
+	   		<h5>Llena los siguientes datos como aparecen en tu credencial de elector</h5>
+	   	</div>
+	   </div>
+  	<div class="row-fluid">
+    	<div class="span5"><br>
+				<%= f.input :profile_name, :label => false, :placeholder => 'Nombre de Usuario' %>
+				<%= f.input :email, :label => false, :placeholder => 'Correo Electrónico', :required => true %>
+				<%= f.input :password, :label => false, :placeholder => 'Contraseña', :required => true %>
+				<%= f.input :password_confirmation, :label => false, :placeholder => 'Confirmar Contraseña', :required => true %>
+				<%= f.input :country, :label => 'Pais', :default => [ "Mexico" ], :collection => ["Mexico"] %>
+				<%= f.input :land_line, :label => false, :placeholder => 'Teléfono Fijo' %>
+				<%= f.input :twitter, :label => false, :placeholder => 'Twitter' %>
+				<%= f.input :cell_phone, :label => false, :placeholder => 'Teléfono Celular' %>	
+			</div>
+			<div class="span3">
+				Nombre
+				<%= f.input :last_name1, :label => false, :placeholder => 'APELLIDO PATERNO' %>
+				<%= f.input :last_name2, :label => false, :placeholder => 'APELLIDO MATERNO' %>
+				<%= f.input :first_name, :label => false, :placeholder => 'NOMBRE(S)' %>
+				Domicilio
+				<%= f.input :street, :label => false, :placeholder => 'CALLE' %>
+				<%= f.input :city_sector, :label => false, :placeholder => 'COLONIA'  %>
+				<%= f.input :city, :label => false, :placeholder => 'CIUDAD (DELEGACION DF)' %>
+				Datos extras
+				<%= f.input :curp, :label => false , :placeholder => 'CURP' %>
+				<%= f.input :ife_state, :label => false, :placeholder => 'ESTADO' %>
+				<%= f.input :ife_locality, :label => false, :placeholder => 'LOCALIDAD' %>
+				<%= f.input :ife_number, :label => 'Atras junto a la firma' %>
+			</div>
+			<div class="span3">
+				<div class="row-fluid">
+          <div class="span7">
+          	Fecha de Nac.
+          	<%= f.input :birthday, :label => false, :input_html => {:style => 'width: 90%'}, as: :date, start_year: Date.today.year-17, end_year: Date.today.year - 17, order: [:month, :day, :year] %>
+          </div>
+          <div class="span5">
+          	Género
+          	<%= f.input :gender, :label => false, :input_html => {:style => 'width: 80%'}, prompt: 'Sexo', :collection => ["M", "H"] %>
+          </div>
+  			</div> <br>
+				<div class="row-fluid">
+          <div class="span4">
+          	<%= f.input :ext_number, :label => false, :input_html => {:style => 'width: 50px'}, :placeholder => '# EXT' %>
+          </div>
+          <div class="span8">
+          	<%= f.input :int_number, :label => false, :input_html => {:style => 'width: 50px'}, :placeholder => '# INT' %>
+          </div>
+  			</div>
+  			<%= f.input :zip_code, :label => false, :placeholder => 'CODIGO POSTAL' %>
+  			<%= f.input :state, :label => false, :collection => mexico_states, prompt: 'ESTADO', :required => true %><br><br><br>
+  			<%= f.input :ife_county, :label => false, :placeholder => 'MUNICIPIO' %>
+  			<%= f.input :ife_section, :label => false, :placeholder => 'SECCION' %>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12 form-actions">
+				<%= f.button :submit, "Únete", class: "btn btn-primary btn-large" %>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+<div class="pagination-right">
+  				
+					
+					<br><br>
+				</div>
+
+
+
+
+
+		<% end %>
+	  <%= render "devise/shared/links" %>
+			
+	</div>
+</div>
+
+
+
+
+
+			
+  

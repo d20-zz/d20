@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_tree .
+  *= require_self
+ */
+
+.alert {
+ 	margin-top: 10px;
+}
+
+#top {
+  padding-top: 20px;
+}
+
+.top2 {
+  padding-top: 50px;
+}
+
+.counter-box {
+  color: #888888;
+}
+
+.navbar-inverse .brand:hover,
+.navbar-inverse .nav > li > a:hover {
+  color: #F4851F;
+}
+
+.state-map {
+	padding: 20px;
+}
+
+#copyright {
+	float: right;
+}
+
+
+
+
+
+.btn-primary {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #F4851F;
+  *background-color: #F4851F;
+  background-image: -moz-linear-gradient(top, #F4851F, #F4851F);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F4851F), to(#F4851F));
+  background-image: -webkit-linear-gradient(top, #F4851F, #F4851F);
+  background-image: -o-linear-gradient(top, #F4851F, #F4851F);
+  background-image: linear-gradient(to bottom, #F4851F, #F4851F);
+  background-repeat: repeat-x;
+  border-color: #F4851F #F4851F #F4851F;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #F4851F;
+  *background-color: #F4851F;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #003399 \9;
+}
+
+.btn-info {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #1A86C9;
+  *background-color: #1A86C9;
+  background-image: -moz-linear-gradient(top, #1A86C9, #1A86C9);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1A86C9), to(#1A86C9));
+  background-image: -webkit-linear-gradient(top, #1A86C9, #1A86C9);
+  background-image: -o-linear-gradient(top, #1A86C9, #1A86C9);
+  background-image: linear-gradient(to bottom, #1A86C9, #1A86C9);
+  background-repeat: repeat-x;
+  border-color: #1A86C9 #1A86C9 #1A86C9;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-info:hover,
+.btn-info:active,
+.btn-info.active,
+.btn-info.disabled,
+.btn-info[disabled] {
+  color: #ffffff;
+  background-color: #1A86C9;
+  *background-color: #1A86C9;
+}
+
+.btn-info:active,
+.btn-info.active {
+  background-color: #1A86C9 \9;
+}
