@@ -66,10 +66,7 @@ D20::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.default_url_options = { :host => 'polar-ridge-9898.heroku.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+
 
 
 
@@ -82,7 +79,9 @@ D20::Application.configure do
     :user_name =>      ENV['MANDRILL_USERNAME'],
     :password =>       ENV['MANDRILL_APIKEY'],
     :domain =>         'heroku.com',
-    :authentication => :plain
+    :authentication => :plain, 
+    :enable_starttls_auto => true 
+  }
 
 ActionMailer::Base.delivery_method = :smtp
 
