@@ -7,10 +7,10 @@
 	<div class="row-fluid well">
 		<div class="row-fluid">
 			<div class="span5">
-				<h5>Datos de Registro</h5>
+				<h5>Datos de registro necesarios</h5>
 	   	</div>
 	   	<div class="span7">
-	   		<h5>Llena los siguientes datos como aparecen en tu credencial de elector</h5>
+	   		<h5>Llena los siguientes datos como aparecen en tu credencial del IFE (opcional)</h5>
 	   	</div>
 	   </div>
   	<div class="row-fluid">
@@ -19,10 +19,15 @@
 				<%= f.input :email, :label => false, :placeholder => 'Correo Electrónico', :required => true %>
 				<%= f.input :password, :label => false, :placeholder => 'Contraseña', :required => true %>
 				<%= f.input :password_confirmation, :label => false, :placeholder => 'Confirmar Contraseña', :required => true %>
-				<%= f.input :country, :label => 'Pais', :default => [ "Mexico" ], :collection => ["Mexico"] %>
-				<%= f.input :land_line, :label => false, :placeholder => 'Teléfono Fijo' %>
+				<%= f.input :state, :label => false, :collection => mexico_states, prompt: 'ESTADO', :required => true %>
+				Estado donde estás registrado ante el IFE
+				<br><br>
+				<h5>Datos Opcionales</h5>
+				<%= f.input :country, :label => false, :default => [ "Mexico" ], :collection => ["Mexico"] %>
 				<%= f.input :twitter, :label => false, :placeholder => 'Twitter' %>
 				<%= f.input :cell_phone, :label => false, :placeholder => 'Teléfono Celular' %>	
+				<%= f.input :land_line, :label => false, :placeholder => 'Teléfono Fijo' %>
+
 			</div>
 			<div class="span3">
 				Nombre
@@ -32,18 +37,19 @@
 				Domicilio
 				<%= f.input :street, :label => false, :placeholder => 'CALLE' %>
 				<%= f.input :city_sector, :label => false, :placeholder => 'COLONIA'  %>
-				<%= f.input :city, :label => false, :placeholder => 'CIUDAD (DELEGACION DF)' %>
+				<%= f.input :city, :label => false, :placeholder => 'CIUDAD O DELEGACION DF)' %>
 				Datos extras
 				<%= f.input :curp, :label => false , :placeholder => 'CURP' %>
 				<%= f.input :ife_state, :label => false, :placeholder => 'ESTADO' %>
 				<%= f.input :ife_locality, :label => false, :placeholder => 'LOCALIDAD' %>
-				<%= f.input :ife_number, :label => 'Atras junto a la firma' %>
+				Al reverso jusnto a la firma
+				<%= f.input :ife_number, :label => false, :placeholder => 'NUMERO IDENTIFICADOR'  %>
 			</div>
 			<div class="span3">
 				<div class="row-fluid">
           <div class="span7">
           	Fecha de Nac.
-          	<%= f.input :birthday, :label => false, :input_html => {:style => 'width: 90%'}, as: :date, start_year: Date.today.year-17, end_year: Date.today.year - 17, order: [:month, :day, :year] %>
+          	<%= f.input :birthday, :label => false, :input_html => {:style => 'width: 90%'}, as: :date, start_year: Date.today.year-17, end_year: Date.today.year - 110, order: [:month, :day, :year] %>
           </div>
           <div class="span5">
           	Género
@@ -59,38 +65,26 @@
           </div>
   			</div>
   			<%= f.input :zip_code, :label => false, :placeholder => 'CODIGO POSTAL' %>
-  			<%= f.input :state, :label => false, :collection => mexico_states, prompt: 'ESTADO', :required => true %><br><br><br>
+  			<br><br><br><br><br>
   			<%= f.input :ife_county, :label => false, :placeholder => 'MUNICIPIO' %>
   			<%= f.input :ife_section, :label => false, :placeholder => 'SECCION' %>
 			</div>
 		</div>
-		<div class="row-fluid">
-			<div class="span12 form-actions">
-				<%= f.button :submit, "Únete", class: "btn btn-primary btn-large" %>
-			</div>
-		</div>
-
-
-
-
-
-
-
-
-<div class="pagination-right">
-  				
-					
-					<br><br>
+		<div class="form-actions">
+			<div class="row-fluid">
+				<div class="span6">
+					<%= f.button :submit, "Únete", class: "btn btn-primary btn-large" %><br><br>
+					<%= render "devise/shared/links" %>
 				</div>
-
-
-
-
-
-		<% end %>
-	  <%= render "devise/shared/links" %>
-			
+				<div class="span6">
+					<h4> Los datos opcionales y los datos de la credencial de elector pueden ser llenados después, son necesarios para tener estatus de afiliado oficial de Democracia 2.0 </h4>
+				</div>
+		</div>
 	</div>
+		
+		</div>
+		<% end %>
+</div>
 </div>
 
 

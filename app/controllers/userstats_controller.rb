@@ -12,10 +12,20 @@ class UserstatsController < ApplicationController
 	
 		 @state1 = state
 
+
+
+@question = Question.new(params[:question])
+if verify_recaptcha() and @question.save
+redirect_to :action => 'show', :permalink => @question.permalink
+else
+render :action => 'new'
+end
+
   end
 
   def show
   end
+  
 
   def mexico_states
     @mexico_states = ['Aguascalientes', 'Baja California Norte', 'Baja California Sur', 'Campeche', 

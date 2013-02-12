@@ -6,13 +6,13 @@
 	<fieldset>
 		<legend>Iniciar Sesión</legend>
 	  <div class="form-inputs">
-	    <%= f.input :email, :label => 'Correo Electrónico', :required => false, :autofocus => true %>
-	    <%= f.input :password, :label => 'Contraseña', :required => false %>
+	    <%= f.input :email, :label => false, :placeholder => 'Correo electrónico', :required => false, :autofocus => true %>
+	    <%= f.input :password, :label => false, :placeholder => 'Contraseña', :required => false %>
 	    <%= f.input :remember_me, :label => 'Recordarme', :as => :boolean if devise_mapping.rememberable? %>
 	  </div>
 
 	  <div class="form-actions">
-	    <%= f.button :submit, "Ingresar", class: "btn btn-primary " %>
+	    <%= f.button :submit, "Ingresar", class: "btn btn-primary btn-large" %>
 	  </div>
 	  </fieldset>
 	<% end %>
