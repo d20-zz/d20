@@ -65,7 +65,8 @@ D20::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => 'polar-ridge-9898.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'www.d20.org.mx' }
+  # :host => 'polar-ridge-9898.heroku.com'
 
 
 
@@ -78,7 +79,7 @@ D20::Application.configure do
     :address =>        'smtp.mandrillapp.com',
     :user_name =>      ENV['MANDRILL_USERNAME'],
     :password =>       ENV['MANDRILL_APIKEY'],
-    :domain =>         'heroku.com',
+    :domain =>         'www.d20.org.mx',  # :domain =>         'heroku.com',
     :authentication => :plain, 
     :enable_starttls_auto => true 
   }
