@@ -22,9 +22,11 @@
           <%= f.input :land_line, :label => false, :placeholder => 'Teléfono Fijo' %>
           <%= f.input :cell_phone, :label => false, :placeholder => 'Teléfono Celular' %>
           <br> 
-          Dejar en blanco en caso de no querer cambiar contraseña
-          <%= f.input :password, :label => false, :placeholder => 'Nueva contraseña', :autocomplete => "off", :required => false %>
-          <%= f.input :password_confirmation, :label => false, :required => false, :placeholder => 'Confirmar nueva contraseña' %>
+          <h5>Dejar en blanco en caso de no querer cambiar contraseña</h5>
+          Nueva contraseña
+          <%= f.input :password, :label => false, :autocomplete => "off", :required => false %>
+          Confirmar nueva contraseña
+          <%= f.input :password_confirmation, :label => false, :required => false %>
         </div>
         <div class="span3">
           Nombre
@@ -68,7 +70,8 @@
         </div>
       </div>
       <h4>Requerido</h4>
-      <%= f.input :current_password, :label => false, :placeholder => 'Contraseña actual', :hint => "Es necesario que ingreses tu contraseña para poder validar los cambios", :required => true %>
+      Contraseña actual
+      <%= f.input :current_password, :label => false, :hint => "Es necesario que ingreses tu contraseña para poder validar los cambios", :required => true %>
  
 
       <div class="form-actions">
@@ -81,16 +84,41 @@
           <div class="span6">
             <h4> Los datos de la credencial del IFE son requeridos para ser contabilizado como un afiliado oficial de Democracia 2.0 </h4>
           </div>
-          <% end %>
         </div>
       </div>
-      
-      
-
-      
-
-  </div>
+    </div>
+    <% end %>
 </div>
+
+<!-- This is added in order to get place holders to show in older version of IE -->
+<script>
+    // placeholder polyfill
+    $(document).ready(function(){
+        function add() {
+            if($(this).val() === ''){
+                $(this).val($(this).attr('placeholder')).addClass('placeholder');
+            }
+        }
+
+        function remove() {
+            if($(this).val() === $(this).attr('placeholder')){
+                $(this).val('').removeClass('placeholder');
+            }
+        }
+
+        // Create a dummy element for feature detection
+        if (!('placeholder' in $('<input>')[0])) {
+
+            // Select the elements that have a placeholder attribute
+            $('input[placeholder], textarea[placeholder]').blur(add).focus(remove).each(add);
+
+            // Remove the placeholder text before the form is submitted
+            $('form').submit(function(){
+                $(this).find('input[placeholder], textarea[placeholder]').each(remove);
+            });
+        }
+    });
+</script>
 
 
 

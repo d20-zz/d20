@@ -17,10 +17,12 @@
     	<div class="span5"><br>
 				<%= f.input :profile_name, :label => false, :placeholder => 'Nombre de Usuario' %>
 				<%= f.input :email, :label => false, :placeholder => 'Correo Electrónico', :required => true %>
-				<%= f.input :password, :label => false, :placeholder => 'Contraseña', :required => true %>
-				<%= f.input :password_confirmation, :label => false, :placeholder => 'Confirmar Contraseña', :required => true %>
-				<%= f.input :state, :label => false, :collection => mexico_states, prompt: 'ESTADO', :required => true %>
+				Contraseña
+				<%= f.input :password, :label => false, :required => true %>
+				Confirmar Contraseña
+				<%= f.input :password_confirmation, :label => false, :required => true %>
 				Estado donde estás registrado ante el IFE
+				<%= f.input :state, :label => false, :collection => mexico_states, prompt: 'ESTADO', :required => true %>
 				<br><br>
 				<h5>Datos Opcionales</h5>
 				<%= f.input :country, :label => false, :default => [ "Mexico" ], :collection => ["Mexico"] %>
@@ -37,7 +39,7 @@
 				Domicilio
 				<%= f.input :street, :label => false, :placeholder => 'CALLE' %>
 				<%= f.input :city_sector, :label => false, :placeholder => 'COLONIA'  %>
-				<%= f.input :city, :label => false, :placeholder => 'CIUDAD O DELEGACION DF)' %>
+				<%= f.input :city, :label => false, :placeholder => 'CIUDAD O DELEGACION DF' %>
 				Datos extras
 				<%= f.input :curp, :label => false , :placeholder => 'CURP' %>
 				<%= f.input :ife_state, :label => false, :placeholder => 'ESTADO' %>
@@ -79,13 +81,43 @@
 				<div class="span6">
 					<h4> Los datos opcionales y los datos de la credencial de elector pueden ser llenados después, son necesarios para tener estatus de afiliado oficial de Democracia 2.0 </h4>
 				</div>
+			</div>
 		</div>
 	</div>
-		
-		</div>
 		<% end %>
 </div>
-</div>
+
+
+
+<!-- This is added in order to get place holders to show in older version of IE -->
+<script>
+    // placeholder polyfill
+    $(document).ready(function(){
+        function add() {
+            if($(this).val() === ''){
+                $(this).val($(this).attr('placeholder')).addClass('placeholder');
+            }
+        }
+
+        function remove() {
+            if($(this).val() === $(this).attr('placeholder')){
+                $(this).val('').removeClass('placeholder');
+            }
+        }
+
+        // Create a dummy element for feature detection
+        if (!('placeholder' in $('<input>')[0])) {
+
+            // Select the elements that have a placeholder attribute
+            $('input[placeholder], textarea[placeholder]').blur(add).focus(remove).each(add);
+
+            // Remove the placeholder text before the form is submitted
+            $('form').submit(function(){
+                $(this).find('input[placeholder], textarea[placeholder]').each(remove);
+            });
+        }
+    });
+</script>
 
 
 
