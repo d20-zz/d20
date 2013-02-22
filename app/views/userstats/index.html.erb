@@ -1,3 +1,12 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="container" id="top">
 
 	<!-- WELCOME PHRASE WITH TWO BUTTONS -->
@@ -18,8 +27,9 @@
 
   <div class="row-fluid">
   	<div class="span12 pagination-centered counter-box">
-  		<h3>Quedan <%= number_of_days = (Date.parse('2013-12-31') - Date.today).to_i %> días para reunir <%= number_with_delimiter(220000 - @user) %> afiliados</h3>
-  		<a href="https://twitter.com/d20mx" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large">Seguir a @d20mx</a>
+  		<h3>Quedan <%= number_of_days = (Date.parse('2013-12-31') - Date.today).to_i %> días para reunir <%= number_with_delimiter(220000 - @user) %> afiliados</h3><br>
+  		<a href="https://twitter.com/d20mx" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large">Seguir a @d20mx</a><br>
+  		<div class="fb-like" data-href="https://www.facebook.com/pages/Democracia-20/418909091523793" data-send="true" data-width="450" data-show-faces="false"></div>
 		</div>
 	</div>
   
