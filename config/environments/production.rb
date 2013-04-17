@@ -68,12 +68,6 @@ D20::Application.configure do
   config.action_mailer.default_url_options = { :host => 'www.d20.org.mx' }
   # :host => 'polar-ridge-9898.heroku.com'
 
-
-
-
-
-
-
   ActionMailer::Base.smtp_settings = {
     :port =>           '587',
     :address =>        'smtp.mandrillapp.com',
@@ -84,6 +78,6 @@ D20::Application.configure do
     :enable_starttls_auto => true 
   }
 
-ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :smtp
 
 end
